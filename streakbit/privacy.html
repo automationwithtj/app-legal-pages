@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Streakbit — Privacy Policy</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 0 20px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background: #fafafa;
+  }
+  h1 { font-size: 1.8em; margin-bottom: 0; }
+  .updated { color: #666; font-size: 0.9em; margin-top: 4px; }
+  h3 { margin-top: 2em; color: #222; }
+  hr { border: none; border-top: 1px solid #ddd; margin: 2em 0; }
+  ul { padding-left: 1.2em; }
+  a { color: #0060df; }
+  .footer { margin-top: 3em; padding-top: 1em; border-top: 1px solid #ddd; color: #666; font-size: 0.9em; }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy for Streakbit</h1>
+<p class="updated">Last Updated: June 30, 2026</p>
+
+<p>Streakbit ("we," "us," or "our") is built as a local-first application. We are committed to
+protecting your privacy and securing your data in accordance with our strict developer security
+protocols. This Privacy Policy details how we handle user data.</p>
+
+<hr>
+
+<h3>1. The Security &amp; Privacy Promise (Zero Telemetry)</h3>
+<p>In alignment with our pre-ship security protocol:</p>
+<ul>
+  <li><strong>Offline-First</strong>: All habit logs, streaks, completion counts, and onboarding answers reside locally on your device.</li>
+  <li><strong>No Remote Servers</strong>: We run no backends, cloud databases, or custom APIs. Your data never leaves your device.</li>
+  <li><strong>No Analytics / Telemetry</strong>: We do not include any tracking SDKs, analytics tools (like Google Analytics, Amplitude), or crash-reporting telemetry (like Sentry).</li>
+  <li><strong>Secure Architecture</strong>: SQLite database queries are fully parameterized to protect database integrity, and standard operating system application sandboxing keeps database files secure from external apps.</li>
+</ul>
+
+<hr>
+
+<h3>2. Local Storage &amp; Sensitive Data</h3>
+<p>The App uses the following local storage subsystems:</p>
+<ul>
+  <li><strong>SQLite Database (<code>habitflow.db</code>)</strong>: Stores your habit lists, schedules, and daily checklist completion history.</li>
+  <li><strong>AsyncStorage (<code>habitflow.settings.v1</code>)</strong>: Stores app configurations (like theme settings, daily notification times) and basic onboarding details (name, age range).</li>
+  <li><strong>Secure Store</strong>: No highly sensitive personal data (passwords, tokens, or financial keys) is requested or stored by this app.</li>
+</ul>
+
+<hr>
+
+<h3>3. Permissions We Request</h3>
+<p>Streakbit requests the following permissions, which you can grant or deny at any time:</p>
+<ul>
+  <li><strong>Notifications</strong>: Used only to trigger daily habit check-ins and scheduled reminders.
+    <ul><li><strong>Local-Only</strong>: All notifications are generated and scheduled directly by the local OS scheduler on your device. No remote push servers are used.</li></ul>
+  </li>
+</ul>
+
+<h3>4. Data Deletion</h3>
+<p>Because all your data is stored locally:</p>
+<ul>
+  <li>You can clear all data instantly via the <strong>Settings &gt; Clear all data</strong> option in the App.</li>
+  <li>Deleting the App from your device will permanently erase all habit logs and history. We cannot restore deleted data.</li>
+</ul>
+
+<hr>
+
+<h3>5. Contact Information</h3>
+<p>If you have any questions or feedback regarding this policy or our security practices, contact us at:</p>
+<ul>
+  <li><strong>Email</strong>: <a href="mailto:tjappssupport@gmail.com">tjappssupport@gmail.com</a></li>
+</ul>
+
+<div class="footer">Streakbit</div>
+
+</body>
+</html>
