@@ -1,79 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AZHWMS Mobile — Privacy Policy</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AZH WMS — Privacy Policy</title>
 <style>
+  :root { color-scheme: light dark; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    max-width: 720px;
-    margin: 40px auto;
-    padding: 0 20px;
-    line-height: 1.6;
-    color: #1a1a1a;
-    background: #fafafa;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.65; max-width: 760px; margin: 0 auto; padding: 32px 20px 64px;
+    color: #1e293b; background: #ffffff;
   }
-  h1 { font-size: 1.8em; margin-bottom: 0; }
-  .updated { color: #666; font-size: 0.9em; margin-top: 4px; }
-  h3 { margin-top: 2em; color: #222; }
-  hr { border: none; border-top: 1px solid #ddd; margin: 2em 0; }
-  ul { padding-left: 1.2em; }
-  a { color: #0060df; }
-  .footer { margin-top: 3em; padding-top: 1em; border-top: 1px solid #ddd; color: #666; font-size: 0.9em; }
+  h1 { font-size: 1.7rem; margin-bottom: 4px; }
+  h2 { font-size: 1.15rem; margin-top: 34px; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px; }
+  .meta { color: #64748b; font-size: 0.9rem; margin-top: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #e2e8f0; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #f8fafc; }
+  code { background: #f1f5f9; padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
+  a { color: #0d9488; }
+  .box { background: #f8fafc; border-left: 3px solid #0d9488; padding: 12px 16px; margin: 18px 0; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e2e8f0; background: #0f172a; }
+    h2 { border-color: #1e293b; }
+    th, td { border-color: #1e293b; }
+    th, .box, code { background: #1e293b; }
+    .meta { color: #94a3b8; }
+  }
 </style>
 </head>
 <body>
 
-<h1>Privacy Policy for AZHWMS Mobile</h1>
-<p class="updated">Last Updated: July 12, 2026</p>
+<h1>AZH WMS — Privacy Policy</h1>
+<p class="meta">Last updated: 23 July 2026 · Applies to the AZH WMS Android application (<code>com.automationwithtj.azhwms</code>)</p>
 
-<p>The AZHWMS Mobile Companion App ("we," "us," or "our") serves as the mobile client for the Abu Zinadah Hospital Warehouse Management System. We are committed to protecting the privacy of hospital staff and ensuring the security of warehouse transaction data. This Privacy Policy details how we handle user data.</p>
+<p>AZH WMS is the mobile companion for the <strong>Abu Zinadah Hospital Warehouse Management System</strong>.
+It is an internal operations tool for authorised hospital staff. It is <strong>not</strong> a medical,
+diagnostic, or patient-facing app, and it never handles patient records.</p>
 
-<hr>
+<h2>1. Who is responsible</h2>
+<p>The app is developed and maintained for Abu Zinadah Hospital by Talha (automationwithtj).
+For any privacy question or request, contact
+<a href="mailto:tjappssupport@gmail.com">tjappssupport@gmail.com</a>.</p>
 
-<h3>1. Data Collection &amp; Purpose</h3>
-<p>Because the app is a closed-loop internal hospital system, data collection is restricted to functional warehouse actions:</p>
+<h2>2. What the app collects</h2>
+<table>
+  <tr><th>Data</th><th>Why</th><th>Who provides it</th></tr>
+  <tr>
+    <td><strong>Account details</strong> — email address, password, full name, assigned role</td>
+    <td>To sign in and to apply the correct access level</td>
+    <td>Created by the warehouse administrator. There is no public sign-up in the app.</td>
+  </tr>
+  <tr>
+    <td><strong>Warehouse records</strong> — orders, requested items and quantities, requester name,
+        department, receiving and return records, inventory levels, prices, supplier names,
+        medicine expiry batches, invoices</td>
+    <td>These are the operational records the system exists to manage</td>
+    <td>Entered by staff inside the app, or by anyone submitting the public order form</td>
+  </tr>
+  <tr>
+    <td><strong>Public order form entries</strong> — the name, department and item list typed by the
+        requester, plus a housekeeping access code where required</td>
+    <td>So the warehouse knows who requested what</td>
+    <td>Typed by the requester. No login is needed for this screen.</td>
+  </tr>
+  <tr>
+    <td><strong>Activity logs</strong> — the acting user's name, role, action, module and timestamp</td>
+    <td>Accountability for stock movements and approvals</td>
+    <td>Recorded automatically when a signed-in user performs an action</td>
+  </tr>
+  <tr>
+    <td><strong>AI Assistant usage log</strong> — user name, role, AI provider, model, timestamp</td>
+    <td>To show managers who is using the assistant and how often</td>
+    <td>Recorded automatically. <strong>The text of your questions and answers is not stored.</strong></td>
+  </tr>
+</table>
+
+<div class="box">
+  <strong>The app does NOT collect:</strong> analytics or usage tracking, crash telemetry,
+  advertising identifiers, location, contacts, photos, camera or microphone data, or any
+  patient or clinical information. There are no ads and no marketing tools in the app.
+</div>
+
+<h2>3. Where the data is stored</h2>
+<p>All warehouse and account data is stored in the hospital's <strong>Supabase</strong>
+(PostgreSQL) database and transmitted over encrypted HTTPS/TLS connections. Passwords are
+stored by Supabase Auth in hashed form and are never visible to the app or to other users.
+Access requires an authenticated hospital account.</p>
+
+<h2>4. What is stored on your phone</h2>
 <ul>
-  <li><strong>Credentials</strong>: The app uses email and password for staff login. Accounts are provisioned directly by the hospital administrator. No self-registration is available.</li>
-  <li><strong>Warehouse Transactions</strong>: We collect order details, quantities, receiving inputs, department logs, and inventory updates submitted by staff to sync with the central database.</li>
-  <li><strong>Verification Codes</strong>: Housekeeping staff verify access codes via the WMS web API to submit clean orders. No personal identity is captured or processed for these checks.</li>
+  <li>Your <strong>sign-in session token</strong>, so you are not asked to log in on every launch.</li>
+  <li>Your <strong>appearance preference</strong> (light / dark / system).</li>
+  <li>A <strong>read-only cache</strong> of recently viewed warehouse screens (inventory lists,
+      pending order counts) so the app remains readable when the phone is offline. No changes
+      can be made while offline.</li>
 </ul>
+<p>This local data is held in the app's private storage area, protected by your device's own
+encryption and screen lock. Signing out clears your session; the offline cache is replaced the
+next time the same screen loads online. If you want everything removed immediately, uninstall
+the app or clear its storage in Android Settings.</p>
 
-<hr>
+<h2>5. Third parties</h2>
+<table>
+  <tr><th>Service</th><th>What it receives</th><th>When</th></tr>
+  <tr>
+    <td><strong>Supabase</strong> (database and authentication hosting)</td>
+    <td>All account and warehouse data described in section 2</td>
+    <td>Always — it is the system's database</td>
+  </tr>
+  <tr>
+    <td><strong>azhwms.com</strong> (the hospital's own web system)</td>
+    <td>The housekeeping access code being verified</td>
+    <td>Only when a housekeeping request is submitted from the public order form</td>
+  </tr>
+  <tr>
+    <td><strong>OpenAI</strong> or <strong>Google Gemini</strong></td>
+    <td>The question typed by the user, plus a summary of warehouse stock, consumption,
+        department usage and recent receiving records (item names, quantities, prices,
+        department and supplier names). No login credentials and no patient data are sent.</td>
+    <td>Only when a manager or developer uses the optional in-app AI Assistant</td>
+  </tr>
+</table>
+<p>Data is not sold, rented, or shared with anyone else, and is never used for advertising.</p>
 
-<h3>2. Cloud Sync &amp; Database Security</h3>
-<p>Unlike offline-first apps, this client integrates with the hospital database:</p>
-<ul>
-  <li><strong>Secure Supabase Connections</strong>: All warehouse data is synced directly over HTTPS to the secure database servers. All transactions follow Row Level Security (RLS) policies based on the active user profile's role.</li>
-  <li><strong>No Analytics or Marketing</strong>: We collect no usage analytics, tracking data, crash telemetry, or marketing data. There are no ads or third-party tracking SDKs included.</li>
-</ul>
+<h2>6. Permissions</h2>
+<p>The app requests network access only. It does not request camera, location, microphone,
+contacts, or photo-library permissions.</p>
 
-<hr>
+<h2>7. Retention and deletion</h2>
+<p>Warehouse records are retained by the hospital for as long as they are needed for
+inventory and audit purposes. Staff accounts are created and removed by the warehouse
+administrator.</p>
+<p>To have your account and associated personal data deleted, follow the instructions on the
+<a href="account-deletion.html">Account &amp; Data Deletion</a> page, or email
+<a href="mailto:tjappssupport@gmail.com">tjappssupport@gmail.com</a>.</p>
 
-<h3>3. Local Storage</h3>
-<p>The App uses the following local storage subsystems on your device:</p>
-<ul>
-  <li><strong>AsyncStorage</strong>: Stores secure session tokens (encrypted key pairs) to keep you logged into your warehouse account and persist your dark/light theme setting.</li>
-</ul>
+<h2>8. Children</h2>
+<p>The app is a workplace tool intended for hospital employees aged 18 and over. It is not
+directed at children and is not knowingly used by them.</p>
 
-<hr>
+<h2>9. Changes to this policy</h2>
+<p>If what the app collects changes, this page is updated and the "Last updated" date above
+changes with it. Material changes are communicated to hospital staff through the warehouse
+administrator.</p>
 
-<h3>4. Data Control &amp; Deletion</h3>
-<ul>
-  <li><strong>Account Deletion</strong>: Staff accounts are managed by the administrator. Users can initiate account deletion via the WMS web dashboard or contact support.</li>
-  <li><strong>Local Session Cleanup</strong>: Pressing "Log Out" inside the app will instantly delete all cached credentials, tokens, and active session states from your device.</li>
-</ul>
-
-<hr>
-
-<h3>5. Contact Information</h3>
-<p>For questions regarding warehouse credentials, account management, or technical support, contact the developer at:</p>
-<ul>
-  <li><strong>Support Email</strong>: <a href="mailto:tjappssupport@gmail.com">tjappssupport@gmail.com</a></li>
-</ul>
-
-<div class="footer">Abu Zinadah Hospital WMS</div>
+<h2>10. Contact</h2>
+<p>Email: <a href="mailto:tjappssupport@gmail.com">tjappssupport@gmail.com</a></p>
 
 </body>
 </html>
